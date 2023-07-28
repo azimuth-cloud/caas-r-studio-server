@@ -11,7 +11,7 @@
   roles:
     - cluster_infra
   post_tasks:
-    - name: Wait for Jupyter notebook to become available
+    - name: Wait for RStudio to become available
       uri:
         url: "http://{{ zenith_fqdn_rstudio }}"
         method: GET

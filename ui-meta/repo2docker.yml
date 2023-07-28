@@ -1,36 +1,21 @@
 name: "rstudio"
-label: "Jupyter Notebook"
+label: "R-Studio Server"
 description: >- 
-  Interactively explore Jupyter Notebooks from an existing GitHub, GitLab, 
-  Zenodo or Figshare repository. Powered by rstudio.
+  Run an R-Studio Server instance for easy web-based access to an R-Studio environment running on cloud hardware.
 logo: https://raw.githubusercontent.com/jupyter/design/master/logos/Square%20Logo/squarelogo-greytext-orangebody-greymoons/squarelogo-greytext-orangebody-greymoons.png
 
-parameters:
-  - name: cluster_repository
-    label: "Notebook Repository"
-    description: |-
-      Jupyter notebook source repository compatible with
-      [rstudio](https://rstudio.readthedocs.io/en/latest/usage.html#using-rstudio).  
-      Examples are available from [Binder](https://github.com/binder-examples).
-    kind: "string"
-    immutable: true
-    options:
-      placeholder: "e.g. https://github.com/binder-examples/voila"
-  
+parameters: 
   - name: cluster_flavor
     kind: "cloud.size"
-    label: "Jupyter Notebook size"
-    description: The size of the Jupyter Notebook node.
+    label: "Machine size"
+    description: The size of the virtual machine instance.
     immutable: true
-    options:
-      min_ram: 4096
-      min_disk: 20
   
   - name: cluster_volume_size
     label: "Volume size (GB)"
     description: |-
       The size of the data volume for the node.  
-      The data volume will be available at `/data`.
+      The data volume will be available at `/home/rstudio/data` and should be used for storage of all important output data.
     kind: "integer"
     default: 10
     options:
@@ -38,12 +23,12 @@ parameters:
     immutable: true
 
 usage_template: |-
-  The Jupyter Notebook repository for this this cluster can be accessed from the services list.
+  The RStudio web interface can be accessed from the services list.
 
 services:
   - name: rstudio
-    label: Jupyter Notebook
-    icon_url: https://raw.githubusercontent.com/jupyter/design/master/logos/Square%20Logo/squarelogo-greytext-orangebody-greymoons/squarelogo-greytext-orangebody-greymoons.png
+    label: RStudio
+    icon_url: https://raw.githubusercontent.com/rstudio/hex-stickers/main/thumbs/RStudio.png
   - name: monitoring
     label: Monitoring
     icon_url: https://raw.githubusercontent.com/cncf/artwork/master/projects/prometheus/icon/color/prometheus-icon-color.png
