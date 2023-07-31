@@ -15,7 +15,6 @@ parameters:
     label: "Volume size (GB)"
     description: |-
       The size of the data volume for the node.  
-      The data volume will be available at `/home/rstudio/data` and should be used for storage of all important output data.
     kind: "integer"
     default: 10
     options:
