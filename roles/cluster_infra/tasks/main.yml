@@ -37,6 +37,9 @@
     - cluster_upgrade_system_packages is not defined or not cluster_upgrade_system_packages
 
 - name: Template Terraform files into project directory
+  # TODO: REMOVE THESE VARS
+  vars:
+    cluster_user_ssh_public_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC4zwdj1GNelbQ6B0p2HelKwsLR672BpRLYyKoRiNOJpQuheBkWkKsZp1O1K8Tj4QtK11mkYOnyHggBw8t2OubeYeR97YD1o7uWL/Pt4azxj1+FzPVL1ujDks27tbjRyCjNMEyOLhRyS26xr/0iRsN12LQtQDSGm5o+N1Wq+Wdy2rPYlhFg3QkE1SecODBkS0vHXyD1mWrcB6rNWIR3Uox0jIT+tw94oCWihaxX8S0nGHc4GafpyBuUfd0LR6TjOD4VjBlTzxwj0SgQGaiKy04vWuKE+/kmV3h8BQg8WmCQSqEBDW04gn93NJetS83oJEk7aqFrtpgjart8KQs46y/Jp8ifIbddVDW/LwxBOo+8PxkxwZUYuwBb7Nr3876wLyHnhpMHFqO8we8H6TRZYZFG3ertwht8NuFXgtpeIZCoyUmAnFTL+8Pwe7FnWL4e8BgAJ1z9LQDT3DsHJ6VbDcYTwoAga773tlo8pLx7UF+oM2sQpEkP8d1beuFeMLbjxys=
   template:
     src: "{{ item }}.j2"
     dest: "{{ terraform_project_path }}/{{ item }}"
