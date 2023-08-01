@@ -15,7 +15,7 @@ parameters:
     label: "Data Volume size (GB)"
     description: |-
       The size of the data volume for the node.
-      The data volume will be available at `/home/rstudio/data`.
+      The data volume will be available at `/home/rstudio/data` and should be used to store any important working data.
     kind: "integer"
     default: 10
     options:
@@ -23,7 +23,8 @@ parameters:
     immutable: true
 
 usage_template: |-
-  The RStudio web interface can be accessed from the services list.
+  The RStudio Server web interface can be accessed from the services list. 
+  The `data` directory within RStudio interface should be used to store any long-lived research data.
 
 services:
   - name: rstudio
