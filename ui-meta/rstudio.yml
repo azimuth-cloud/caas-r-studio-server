@@ -10,7 +10,10 @@ parameters:
     label: "Machine size"
     description: The size of the virtual machine instance.
     immutable: true
-  
+    options:
+      min_ram: 2048
+      min_disk: 10
+
   - name: cluster_volume_size
     label: "Data Volume size (GB)"
     description: |-
