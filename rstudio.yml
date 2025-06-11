@@ -7,7 +7,7 @@
     - cluster_infra
   post_tasks:
     - name: Wait for RStudio to become available
-      uri:
+      ansible.builtin.uri:
         url: "http://{{ zenith_fqdn_rstudio }}"
         method: GET
         follow_redirects: safe
@@ -24,9 +24,9 @@
       delay: 10
       until: "rstudio_uri is not failed"
       when: (cluster_state | default('present')) == 'present'
-    
+
     - name: Wait for Monitoring to become available
-      uri:
+      ansible.builtin.uri:
         url: "http://{{ zenith_fqdn_monitoring }}"
         method: GET
         follow_redirects: safe
