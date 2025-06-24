@@ -1,10 +1,10 @@
 name: "rstudio"
 label: "R-Studio Server"
-description: >- 
+description: >-
   Run an R-Studio Server instance for easy web-based access to an R-Studio environment running on cloud hardware.
 logo: https://raw.githubusercontent.com/rstudio/hex-stickers/main/thumbs/RStudio.png
 
-parameters: 
+parameters:
   - name: cluster_flavor
     kind: "cloud.size"
     label: "Machine size"
@@ -34,7 +34,7 @@ parameters:
     immutable: true
 
 usage_template: |-
-  The RStudio Server web interface can be accessed from the services list. 
+  The RStudio Server web interface can be accessed from the services list.
   The `data` directory within RStudio interface should be used to store any long-lived research data.
 
 services:
